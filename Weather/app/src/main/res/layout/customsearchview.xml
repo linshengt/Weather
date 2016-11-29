@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/global_search_action_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/status_color"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/search_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/back"/>
+
+        <EditText
+            android:id="@+id/et_search_content"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@+id/search_iv_back"
+            android:layout_toRightOf="@+id/search_iv_back"
+            android:background="@drawable/round_white_btn_bg"
+            android:gravity="start|center_vertical"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:maxLength="10"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:singleLine="true"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:id="@+id/search_clear_content_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/et_search_content"
+            android:layout_alignRight="@id/et_search_content"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:src="@mipmap/login_icon_edit_clear"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/search_lv_tips"
+        android:background="@drawable/lv_search_tips_bg"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </ListView>
+</LinearLayout>

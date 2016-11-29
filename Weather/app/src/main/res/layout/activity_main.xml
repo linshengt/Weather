@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.example.linshengt.weather.MainActivity">
+
+    <com.example.linshengt.weather.Views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ptr_frame"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        >
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:id="@+id/rlFirst"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="210dp">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_marginTop="5dp"
+                            android:text="15:56 周六 05/11"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvWeather"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginTop="8dp"
+                            android:layout_below="@id/tvDate"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tvTemperature"
+                            android:text="21°"
+                            android:textSize="60dp"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvWeather"
+                            android:layout_centerHorizontal="true" />
+
+                        <TextView
+                            android:id="@+id/tvHLTemperature"
+                            android:text="23°/17°"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvTemperature"
+                            android:layout_centerHorizontal="true" />
+
+                        <RelativeLayout
+                            android:layout_below="@id/tvHLTemperature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="东南风"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="40dp"
+                                android:textColor="@color/colorWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tvWind" />
+
+                            <TextView
+                                android:id="@+id/tvHumdity"
+                                android:text="湿度"
+                                android:layout_marginRight="54dp"
+                                android:textColor="@color/colorWhite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="54dp"
+                                android:layout_alignTop="@+id/tvWind"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlSecond"
+                        android:background="@color/colorLGray"
+                        android:layout_below="@id/rlFirst"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvLongTime"
+                            android:layout_centerHorizontal="true"
+                            android:text="长期预报"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_below="@id/tvLongTime"
+                            android:id="@+id/recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlThird"
+                        android:background="@color/colorLGray"
+                        android:layout_below="@id/rlSecond"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvHourTime"
+                            android:background="@color/colorLGray"
+                            android:layout_centerHorizontal="true"
+                            android:text="小时预报"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_below="@id/tvHourTime"
+                            android:id="@+id/recyclerViewhour"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+
+
+</RelativeLayout>

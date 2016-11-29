@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="70dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/itemWeek"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/image"
+        android:layout_below="@id/itemWeek"
+        android:src="@drawable/d00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.linshengt.weather.Views.histogram
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/image"
+        android:id="@+id/histogram"
+        android:layout_width="30dp"
+        android:layout_height="300dp" />
+</RelativeLayout>
