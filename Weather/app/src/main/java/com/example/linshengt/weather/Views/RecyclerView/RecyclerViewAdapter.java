@@ -40,6 +40,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         String str = list.get(position).getTemp();
         String strTemp;
 
+        String highTempBench="", lowTempBench="";
+        String strBench = list.get(0).getTemp();
+        String strTempBench;
+
+        for (int i = 0; i < strBench.length(); i ++){
+            if(strBench.substring(i, i+1).equals("℃")){
+                lowTempBench = strBench.substring(0, i);
+                strTempBench = strBench.substring(i, strBench.length());
+                int k = 0;
+                for (int j = 0; j < strTempBench.length(); j ++){
+                    if(strTempBench.substring(j, j+1).equals("~")){
+                        k = j;
+                    }
+                    if (k!=0 && strTempBench.substring(j, j+1).equals("℃")){
+                        highTempBench = strTempBench.substring(k+1, j);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+
         for (int i = 0; i < str.length(); i ++){
             if(str.substring(i, i+1).equals("℃")){
                 lowTemp = str.substring(0, i);
@@ -57,10 +79,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 break;
             }
         }
+
+
         holder.textView.setText(list.get(position).getWeekk());
         HLog.i(TAG, "lowTemp:" + lowTemp + "   highTemp:" + highTemp);
-        holder.histogram.setTemp(Integer.parseInt(highTemp), Integer.parseInt(lowTemp));
-
+        HLog.i(TAG, "lowTempBench:" + lowTempBench + "   highTempBench:" + highTempBench);
+       holder.histogram.setTemp(Integer.parseInt(highTemp), Integer.parseInt(lowTemp), (Integer.parseInt(highTempBench)+Integer.parseInt(lowTempBench))/2);
+ //       holder.histogram.setTemp(Integer.parseInt(highTemp), Integer.parseInt(lowTemp), 4);
         String weatherIdFa = list.get(position).getWeather_id_fa();
         String weatherIdFb = list.get(position).getWeather_id_fb();
         switch (weatherIdFa){

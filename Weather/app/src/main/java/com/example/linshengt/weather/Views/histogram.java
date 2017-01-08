@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.example.linshengt.weather.Utils.HLog;
+
 /**
  * Created by 94437 on 2016/11/7.
  */
@@ -19,8 +21,9 @@ public class histogram extends View {
     private Paint mPaint;
     private Paint mPaintText;
     private int w, h;
-    private int highTemp=20, lowTemp=10;
+    private int highTemp=20, lowTemp=10, BenchTemp;
     private float offset, histogramW;
+    private float lenPercentD;
 
 
     public histogram(Context context, AttributeSet attrs) {
@@ -38,6 +41,7 @@ public class histogram extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         this.w = w;
         this.h = h;
+        lenPercentD = 2*h/120;
         init();
     }
 
@@ -55,16 +59,17 @@ public class histogram extends View {
 
     }
 
-    public void setTemp(int nhighTemp, int nlowTemp){
+    public void setTemp(int nhighTemp, int nlowTemp, int nBenchTemp){
         this.highTemp = nhighTemp;
         this.lowTemp = nlowTemp;
-
+        this.BenchTemp = nBenchTemp;
+        HLog.i(TAG, "nBenchTemp:"+nBenchTemp);
         invalidate();
 
     }
 
     private int x2y(int x){
-        return -2*h*(x - 20)/120;
+        return (int) (-2*h*(x - 20)/120 - (20-BenchTemp)*lenPercentD);
     }
 
     @Override

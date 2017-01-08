@@ -9,4 +9,5 @@
     <color name="colorLGray">#dedcde</color>
     <color name="status_color">#56abe4</color>
     <color name="colorLightGray">#d1c7c7</color>
+    <color name="refresh_background">#FFCADAF3</color>
 </resources>

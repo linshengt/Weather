@@ -20,6 +20,10 @@
         "source": "E:\\androidProject\\NewsApplication\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ptr_rotate_arrow.png"
     },
     {
+        "merged": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ptr_rotate_arrow.png",
+        "source": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ptr_rotate_arrow.png"
+    },
+    {
         "merged": "G:\\Git\\android\\temp\\NewsApp\\ptr-lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ptr_rotate_arrow.png",
         "source": "G:\\Git\\android\\temp\\NewsApp\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ptr_rotate_arrow.png"
     },

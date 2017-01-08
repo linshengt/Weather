@@ -24,6 +24,7 @@ import com.example.linshengt.weather.Service.WeatherService;
 import com.example.linshengt.weather.Utils.DataUtil;
 import com.example.linshengt.weather.Utils.HLog;
 import com.example.linshengt.weather.Utils.PreferenceUtil;
+import com.example.linshengt.weather.Utils.StringUtil;
 import com.example.linshengt.weather.Views.RecyclerView.RecyclerViewAdapter;
 import com.example.linshengt.weather.Views.RecyclerView.RecyclerViewHAdapter;
 import com.example.linshengt.weather.Views.TitleBar;
@@ -63,7 +64,7 @@ public class MainActivity extends Activity {
         mContext = this;
         setContentView(R.layout.activity_main);
 
-
+        HLog.i(TAG, StringUtil.getSpells("林绳桐福州"));
         findView();
     }
 
@@ -77,7 +78,6 @@ public class MainActivity extends Activity {
 
         HLog.i(TAG, "onResume-->ID:" + mCityId);
         HLog.i(TAG, "onResume-->mCity:" + mCity);
-        mCity = "上海";
         initData();
         initView();
     }
@@ -142,14 +142,15 @@ public class MainActivity extends Activity {
         mTitleBar.setCommonTitle(View.VISIBLE);
         mTitleBar.setTitleBarTile(mCity);
 
-        mPtrFrameLayout.setPtrHandler(new PtrDefaultHandler() {
-            @Override
-            public boolean onRefreshBegin(PtrFrameLayout frame) {
-                mWeatherService.getWeather(mContext, DataUtil.gbk2UTF8URL(mCity));
-                return true;
-            }
-
-        });
+        mPtrFrameLayout.setHeaderView(new ParallaxHeader(mContext));
+//        mPtrFrameLayout.setPtrHandler(new PtrDefaultHandler() {
+//            @Override
+//            public boolean onRefreshBegin(PtrFrameLayout frame) {
+//                mWeatherService.getWeather(mContext, DataUtil.gbk2UTF8URL(mCity));
+//                return true;
+//            }
+//
+//        });
 
         mScrollView.smoothScrollTo(0, 0);
         mPtrFrameLayout.postDelayed(new Runnable() {
@@ -193,34 +194,6 @@ public class MainActivity extends Activity {
              mWeatherBean = mWeatherDao.getWeatherBean(mCity);
              setView(mWeatherBean);
         }
-        /*
-
-
-        mPtrFrame.setLastUpdateTimeRelateObject(this);
-        mPtrFrame.setPtrHandler(new PtrHandler() {
-            @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
-                updateData();
-            }
-
-            @Override
-            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
-            }
-        });
-        // the following are default settings
-        mPtrFrame.setResistance(1.7f);
-        mPtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
-        mPtrFrame.setDurationToClose(200);
-        mPtrFrame.setDurationToCloseHeader(1000);
-        // default is false
-        mPtrFrame.setPullToRefresh(false);
-        // default is true
-        mPtrFrame.setKeepHeaderWhenRefresh(true)
-
-
-         */
-        mPtrFrameLayout.autoRefresh(true);
           initSlidingMenu();
     }
 

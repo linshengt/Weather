@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.linshengt.weather.Activity.SearchCityActivity">
 
    <com.example.linshengt.weather.Views.CustomSearchView
        android:id="@+id/searchView"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
-</RelativeLayout>
+   <RelativeLayout
+       android:id="@+id/cityList"
+       android:background="@android:color/white"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <android.support.v7.widget.RecyclerView
+          android:layout_marginRight="50px"
+          android:background="@android:color/white"
+          android:id="@+id/recyclerViewCiy"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+
+      <android.support.v7.widget.RecyclerView
+          android:layout_marginTop="80px"
+          android:background="@android:color/white"
+          android:layout_alignParentRight="true"
+          android:id="@+id/recyclerViewLetter"
+          android:layout_width="50px"
+          android:layout_height="wrap_content"/>
+   </RelativeLayout>
+</LinearLayout>

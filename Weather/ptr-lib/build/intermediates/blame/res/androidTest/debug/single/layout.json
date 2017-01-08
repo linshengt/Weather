@@ -16,6 +16,14 @@
         "source": "G:\\Git\\android\\NewsApplication\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\layout\\cube_ptr_simple_loading.xml"
     },
     {
+        "merged": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cube_ptr_simple_loading.xml",
+        "source": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\layout\\cube_ptr_simple_loading.xml"
+    },
+    {
+        "merged": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cube_ptr_classic_default_header.xml",
+        "source": "E:\\androidKnowledge\\Knowledge\\Weather\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\layout\\cube_ptr_classic_default_header.xml"
+    },
+    {
         "merged": "G:\\Git\\android\\androidProject\\NewsApp\\ptr-lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cube_ptr_simple_loading.xml",
         "source": "G:\\Git\\android\\androidProject\\NewsApp\\ptr-lib\\build\\intermediates\\bundles\\debug\\res\\layout\\cube_ptr_simple_loading.xml"
     },

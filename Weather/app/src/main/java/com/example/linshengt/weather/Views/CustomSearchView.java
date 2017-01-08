@@ -68,7 +68,7 @@ public class CustomSearchView extends LinearLayout implements View.OnClickListen
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
     }
-    private class EditChangedListener implements TextWatcher{
+    public class EditChangedListener implements TextWatcher{
 
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -79,12 +79,14 @@ public class CustomSearchView extends LinearLayout implements View.OnClickListen
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             if("".equals(charSequence.toString())){
                 imageViewDelete.setVisibility(INVISIBLE);
-                listView.setVisibility(INVISIBLE);
+                listView.setVisibility(GONE);
+                mSearchViewListener.onEditext(true);
             }else {
                 imageViewDelete.setVisibility(VISIBLE);
                 mSearchViewListener.onRefreshAutoComplete(""+charSequence);
                 listView.setVisibility(VISIBLE);
                 listView.setAdapter(mAutoCompleteAdapter);
+                mSearchViewListener.onEditext(false);
             }
         }
 
@@ -101,6 +103,7 @@ public class CustomSearchView extends LinearLayout implements View.OnClickListen
                 break;
             case R.id.search_clear_content_iv:
                 editText.setText("");
+                listView.setVisibility(GONE);
                 break;
             default:
                 break;
@@ -134,5 +137,7 @@ public class CustomSearchView extends LinearLayout implements View.OnClickListen
          * @param text 传入输入框的文本
          */
         void onSearch(String text);
+
+        void onEditext(boolean isEmpty);
     }
 }
